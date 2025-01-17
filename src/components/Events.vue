@@ -1,0 +1,45 @@
+<template>
+    <h1> Email:  {{ email }}</h1>
+    <h1> Phone: {{ mobile  }}</h1>
+    <h1> Name 1: {{ getName("Trump") }}</h1>
+    <h1> Name 2: {{ getName("Joe") }}</h1>
+    <!-- <h1> Data: {{ getData().email }}</h1>
+    <h1> Data: {{ getData().Phone }}</h1> -->
+    <button @dblclick="getData('Hello')"> Click Here </button>
+    <h1 v-on:mousemove="getConsole()"> Home Page </h1>
+</template>
+
+<script>
+export default{
+    name: "EVENTS",
+    data(){
+        return{
+            email:"abc@gmail.com",
+            mobile: 5555,
+        };
+    },
+    methods:{
+        getName(name){
+            return name;
+        },
+        // getData(){
+        //     return{
+        //         email: this.email,
+        //         Phone: this.mobile,
+        //     };
+        // },
+        getData(data){
+            alert(data)
+        },
+        getConsole(){
+            console.log("Function is running")
+        }
+    },
+}
+</script>
+
+<style scoped>
+h1{
+    color: red;
+}
+</style>
